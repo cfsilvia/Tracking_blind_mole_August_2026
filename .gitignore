@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# SAM2 local data and outputs
+checkpoints/
+*_sam2/
+*_sam2_masks.npz
+*_sam2_centroids.csv
+*_sam2_overlay.mp4
+
 # C extensions
 *.so
 

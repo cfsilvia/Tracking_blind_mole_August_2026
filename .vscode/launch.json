@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "SAM2 Track Two Animals",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/sam2_two_rats.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "justMyCode": false
+        },
+        {
+            "name": "Export SAM2 Centroids",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/sam2_export_centroids.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--masks",
+                "test_100_sam2/test_100_sam2_masks.npz"
+            ],
+            "justMyCode": false
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+# Input video.
+video: test_100.avi
+
+# Track 1 or 2 animals.
+num_animals: 2
+
+# Default frame for both animals. Overridden by rat1_frame and rat2_frame.
+init_frame: 0
+rat1_frame:
+rat2_frame:
+
+# SAM2 checkpoint and config. Leave model_cfg empty to infer it from checkpoint.
+checkpoint: checkpoints/sam2.1_hiera_large.pt
+model_cfg:
+
+# Outputs. Leave output_dir empty to use <video_stem>_sam2.
+output_dir:
+frames_dir:
+reuse_frames: false
+skip_overlay: false
+
+# If true, extract frames only when frames_dir is missing or has no JPG frames.
+extract_frames_if_missing_only: true
+
+# Frame extraction method: ffmpeg, ffmpeg_cuda, or opencv.
+# ffmpeg is usually much faster than OpenCV for large movies.
+frame_extraction_method: ffmpeg
+ffmpeg_path: ffmpeg
+
+# Memory options for large movies and 16 GB GPUs.
+offload_video_to_cpu: true
+offload_state_to_cpu: true
+clear_cuda_cache: true
+
+# Optional boxes in original video pixels as [x, y, width, height].
+# Leave empty to draw boxes interactively.
+rat1_box:
+rat2_box:
+
+# Frame extraction and interactive display options.
+jpeg_quality: 95
+display_max_width: 1400
+display_max_height: 900
